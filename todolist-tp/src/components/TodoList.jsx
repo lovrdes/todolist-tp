@@ -1,6 +1,6 @@
 import Todo from './Todo';
 
-export default function TodoList({ todos, toggleTodo, deleteTodo }) {
+export default function TodoList({ todos, setTodos }) {
   if (!todos.length) return <p>No hay tareas</p>;
 
   return (
@@ -9,8 +9,7 @@ export default function TodoList({ todos, toggleTodo, deleteTodo }) {
         <Todo
           key={todo.id}
           todo={todo}
-          toggleTodo={toggleTodo}
-          deleteTodo={deleteTodo}
+          setTodos={setTodos}
         />
       ))}
     </ul>
