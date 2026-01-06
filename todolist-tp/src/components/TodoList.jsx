@@ -1,6 +1,6 @@
 import Todo from './Todo';
 
-export default function TodoList({ todos, setTodos }) {
+export default function TodoList({ todos, setTodos, onDelete }) {
   if (!todos.length) return <p>No hay tareas</p>;
 
   return (
@@ -10,6 +10,7 @@ export default function TodoList({ todos, setTodos }) {
           key={todo.id}
           todo={todo}
           setTodos={setTodos}
+          onDelete={onDelete}
         />
       ))}
     </ul>

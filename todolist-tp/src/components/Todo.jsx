@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { validateTodo } from '../utils/validations';
 
-export default function Todo({ todo, setTodos }) {
+export default function Todo({ todo, setTodos, onDelete }) {
   const [editing, setEditing] = useState(false);
   const [text, setText] = useState(todo.text);
   const [error, setError] = useState('');
@@ -14,13 +14,6 @@ export default function Todo({ todo, setTodos }) {
           : t
       )
     );
-  };
-
-  const handleDelete = () => {
-    const confirmDelete = confirm('¿Seguro que querés eliminar esta tarea?');
-    if (!confirmDelete) return;
-
-    setTodos(prev => prev.filter(t => t.id !== todo.id));
   };
 
   const handleEdit = () => {
@@ -60,7 +53,7 @@ export default function Todo({ todo, setTodos }) {
           <div className="icons">
             <button onClick={toggleComplete}>✔️</button>
             <button onClick={() => setEditing(true)}>✏️</button>
-            <button onClick={handleDelete}>🗑</button>
+            <button onClick={() => onDelete(todo)}>🗑</button>
           </div>
         </>
       )}
