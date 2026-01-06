@@ -40,7 +40,7 @@ function App() {
 
     return (
         <div className="app">
-            <h1>Gestión de Tareas</h1>
+            <h1>To do list</h1>
 
 
             <Form setTodos={setTodos} />

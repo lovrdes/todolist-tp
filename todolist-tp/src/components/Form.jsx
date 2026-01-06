@@ -1,34 +1,33 @@
 import { useState } from 'react';
 
 export default function Form({ setTodos }) {
-const [text, setText] = useState('');
+  const [text, setText] = useState('');
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-const handleSubmit = (e) => {
-e.preventDefault();
+    if (!text.trim()) return;
 
-if (!text.trim()) return;
+    setTodos(prev => [
+      ...prev,
+      {
+        id: crypto.randomUUID(),
+        text: text.trim(),
+        completed: false
+      }
+    ]);
 
-setTodos(prev => [
-...prev,
-{
-id: crypto.randomUUID(),
-text: text.trim(),
-completed: false
-}
-]);
+    setText('');
+  };
 
-setText('');
-};
-
-return (
-<form onSubmit={handleSubmit}>
-<input
-placeholder="Nueva tarea"
-value={text}
-onChange={(e) => setText(e.target.value)}
-/>
-<button type="submit">Agregar</button>
-</form>
-);
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        placeholder="Nueva tarea"
+      />
+      <button type="submit">Agregar</button>
+    </form>
+  );
 }
