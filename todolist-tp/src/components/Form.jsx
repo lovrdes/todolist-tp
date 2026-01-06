@@ -1,12 +1,34 @@
-export default function Form(){
-return(
+import { useState } from 'react';
 
-<form className="form">
-<div className="input-icon">
-<span>➕</span>
-<input placeholder="Nueva Tarea"/>
-<button type="button">Agregar</button>
-</div>
+export default function Form({ setTodos }) {
+const [text, setText] = useState('');
+
+
+const handleSubmit = (e) => {
+e.preventDefault();
+
+if (!text.trim()) return;
+
+setTodos(prev => [
+...prev,
+{
+id: crypto.randomUUID(),
+text: text.trim(),
+completed: false
+}
+]);
+
+setText('');
+};
+
+return (
+<form onSubmit={handleSubmit}>
+<input
+placeholder="Nueva tarea"
+value={text}
+onChange={(e) => setText(e.target.value)}
+/>
+<button type="submit">Agregar</button>
 </form>
 );
 }
