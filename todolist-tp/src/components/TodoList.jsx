@@ -10,7 +10,7 @@ export default function TodoList({ todos, setTodos, onDelete }) {
                     key={todo.id}
                     todo={todo}
                     setTodos={setTodos}
-                    onDelete={onDelete}
+                    onDelete={onDelete ? onDelete : () => {}} 
                 />
             ))}
         </ul>
