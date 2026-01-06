@@ -126,43 +126,43 @@ p {
 }
 
 .modal-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
 }
 
 .modal {
-  background: #d8bbbb;
-  padding: 1.5rem;
-  border-radius: 8px;
-  max-width: 320px;
-  width: 100%;
-  text-align: center;
+    background: #d8bbbb;
+    padding: 1.5rem;
+    border-radius: 8px;
+    max-width: 320px;
+    width: 100%;
+    text-align: center;
 }
 
 .modal-buttons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
 }
 
 .btn-cancel {
-  background: #e7e7e7;
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
+    background: #e7e7e7;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
 }
 
 .btn-confirm {
-  background: #e63946;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
+    background: #e63946;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
 }
 
 @media (max-width: 480px) {
@@ -171,4 +171,3 @@ p {
         padding: 16px;
     }
 }
-
