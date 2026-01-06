@@ -1,12 +1,18 @@
 import Todo from './Todo';
 
-export default function TodoList(){
-return(
+export default function TodoList({ todos, toggleTodo, deleteTodo }) {
+  if (!todos.length) return <p>No hay tareas</p>;
 
-<ul className="todo-list">
-<Todo />
-<Todo />
-<Todo />
-</ul>
-);
+  return (
+    <ul>
+      {todos.map(todo => (
+        <Todo
+          key={todo.id}
+          todo={todo}
+          toggleTodo={toggleTodo}
+          deleteTodo={deleteTodo}
+        />
+      ))}
+    </ul>
+  );
 }

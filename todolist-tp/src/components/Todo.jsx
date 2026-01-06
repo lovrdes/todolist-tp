@@ -1,11 +1,12 @@
-export default function Todo(){
-return(
-<li className="todo">
-<span>Tarea ej</span>
-<div className="actions">
-<button>✔</button>
-<button>🗑</button>
-</div>
-</li>
-);
+export default function Todo({ todo, toggleTodo, deleteTodo }) {
+  return (
+    <li className={todo.completed ? 'completed' : ''}>
+      <span>{todo.text}</span>
+
+      <div className="icons">
+        <button onClick={() => toggleTodo(todo.id)}>✔</button>
+        <button onClick={() => deleteTodo(todo.id)}>🗑</button>
+      </div>
+    </li>
+  );
 }
